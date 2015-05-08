@@ -36,7 +36,10 @@ gulp.task('serve', function () {
 
 //Browserify
 gulp.task('browserify',function(){
-  return browserify('./app/index.js')
+  return browserify({
+    entries:'./app/index.js',
+    debug:true
+  })
   .bundle()
   .pipe(source('./bundle.js'))
   .pipe(buffer()) //Si le aplicacamos uglify despues del bundle() dará error porque por asincronía, aún no ha sido generado el fichero cuando queremos acceder a el.
