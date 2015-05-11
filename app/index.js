@@ -1,5 +1,13 @@
-var AppView = require('./app-main');
+var Gallery = require('./views/Gallery');
+var Header = require('./views/Header');
 
-var appView = new AppView();
+//Say hello
+console.log('%c Hello stranger! ', 'background: #222; color: #bada50');
 
-console.log(appView.$el.html());
+//Load gallery view
+var header = new Header();
+//Load gallery view
+var myGallery = new Gallery();
+
+
+

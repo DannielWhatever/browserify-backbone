@@ -6,7 +6,9 @@ var gulp = require('gulp'),
 
 browserify = require('browserify'),
   source = require('vinyl-source-stream'),
-  buffer = require('vinyl-buffer');
+  buffer = require('vinyl-buffer'),
+
+    sass = require('gulp-sass');
 
 
 // Tasks
@@ -20,8 +22,12 @@ gulp.task('build', ['browserify']);
 //Watch
 gulp.task('watch', function() {
     gulp.watch('./public/**/*.html', ['html-reload']);
+    
     gulp.watch('./app/**/*.js', ['browserify']);
     gulp.watch('./public/**/*.js', ['js-reload']);
+
+    gulp.watch('./styles/**/*.scss', ['sass']);
+    gulp.watch('./public/css/**/*.css', ['css-reload']);
 });
 
 //Serve (for development)
@@ -47,6 +53,13 @@ gulp.task('browserify',function(){
   .pipe(gulp.dest('public'));
 });
 
+//Sass
+gulp.task('sass', function () {
+    gulp.src('./styles/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('public/css'));
+});
+
 
 //Task html livereload
 gulp.task('html-reload', function() {
@@ -60,6 +73,10 @@ gulp.task('js-reload', function() {
     .pipe(connect.reload());
 });
 
-
+//Task css livereload
+gulp.task('css-reload', function() {
+  gulp.src('./public/css/**/*.css')
+    .pipe(connect.reload());
+});
 
 
