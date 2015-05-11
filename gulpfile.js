@@ -24,6 +24,7 @@ gulp.task('watch', function() {
     gulp.watch('./public/**/*.html', ['html-reload']);
     
     gulp.watch('./app/**/*.js', ['browserify']);
+    gulp.watch('./app/**/*.hbs', ['browserify']);
     gulp.watch('./public/**/*.js', ['js-reload']);
 
     gulp.watch('./styles/**/*.scss', ['sass']);
@@ -44,7 +45,8 @@ gulp.task('serve', function () {
 gulp.task('browserify',function(){
   return browserify({
     entries:'./app/index.js',
-    debug:true
+    debug:true,
+    transform: ['hbsfy']
   })
   .bundle()
   .pipe(source('./bundle.js'))

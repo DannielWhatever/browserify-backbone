@@ -2,6 +2,8 @@ var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
 
+var template = require('../templates/Header.hbs');
+
 Backbone.$ = $;
 
 
@@ -30,27 +32,8 @@ module.exports = Backbone.View.extend({
 	},
 
 	render: function(){
-		var title = aboutMe.name + ' | ' + aboutMe.title;
-		var socialIcons = '';
-		_.each(aboutMe.social,function(i){
-			socialIcons += '<li><a href="'+i.link+'"><i class="'+i.iconclass+'"></i></a></li>';
-		});
 
-		var vHtml = '<div class="row">'+
-					'	<div class="col-xs-12">'+
-					'		<nav>'+
-					'			<div class="nav-wrapper light-green lighten-2">'+
-					'	     		<a href="#!" class="brand-logo">'+title+'</a>'+
-					'	     		<ul class="right hide-on-med-and-down">'+
-					socialIcons+
-					'	       			<li><a href="mobile.html"><i class="mdi-navigation-more-vert"></i></a></li>'+
-					'     			</ul>'+
-					'   		</div>'+
-					'		</nav>'+
-					'   </div>'+
-					'</div>';
-		this.$el.html(vHtml);
-
+		this.$el.html( template(aboutMe) );
 						
 	}
 
