@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var _ = require('underscore');
+//var _ = require('underscore');
 var Backbone = require('backbone');
 
 var template = require('../templates/Header.hbs');
@@ -15,7 +15,7 @@ module.exports = Backbone.View.extend({
 	    
 		aboutMe = {
 			name: 'Daniel Gutiérrez',
-			title: 'Web Developer',
+			title: 'Software Developer',
 			social: [
 						{
 							link:'https://github.com/DannielWhatever',

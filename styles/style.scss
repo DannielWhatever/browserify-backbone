@@ -1,9 +1,11 @@
 /** Fonts **/
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 /** Variables **/
-$color-background: #f1f8e9;
+$color-background: #212121;
 $font-main: 'PT Sans Narrow';
+$font-indie: 'Indie Flower';
 
 /** General **/
 separator{display:block;height:40px;}
@@ -27,6 +29,10 @@ h2{
 	width: 400px;
 }
 
-
+/** Post **/
+.post{
+	font-family: $font-indie;
+	font-size: 18px;
+}
 
 

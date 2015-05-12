@@ -1,17 +1,15 @@
-<div class="row">
-	<div class="col-xs-12">
-		<nav>
-			<div class="nav-wrapper light-green lighten-2">
-	     		<a href="#!" class="brand-logo">
-	     			{{name}} | {{title}}
-	     		</a>
-	     		<ul class="right hide-on-med-and-down">
-	     			{{#each social}}
-	     				<li><a href="{{this.link}}"><i class="{{this.iconclass}}"></i></a></li>
-	     			{{/each}}
-	       			<li><a href="#!"><i class="mdi-navigation-more-vert"></i></a></li>
-     			</ul>
-   			</div>
-		</nav>
-   </div>
-</div>
+<nav>
+	<div class="nav-wrapper light-green lighten-2">
+ 		<a href="#!" class="brand-logo">
+ 			{{name}} | {{title}}
+ 		</a>
+ 		<div class="right">
+ 			<ul class="hide-on-med-and-down">
+ 				{{#each social}}
+ 					<li><a href="{{this.link}}"><i class="{{this.iconclass}}"></i></a></li>
+ 				{{/each}}
+ 				<li><a>&nbsp;</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
