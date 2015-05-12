@@ -3,9 +3,9 @@
 var express = require('express');
 var app = express();
 
+app.set('port', 5000);// (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-// start server on the specified port and binding host
-app.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP,function() {
-  console.log("server starting on " + appEnv.url);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
