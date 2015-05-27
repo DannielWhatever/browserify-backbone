@@ -1,15 +1,15 @@
 //Dependencias
 var gulp = require('gulp'),
  connect = require('gulp-connect'),
- 
+
   uglify = require('gulp-uglify'),
+  concat = require('gulp-concat'),
 
 browserify = require('browserify'),
   source = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
 
     sass = require('gulp-sass');
-
 
 // Tasks
 
@@ -21,14 +21,14 @@ gulp.task('build', ['browserify']);
 
 //Watch
 gulp.task('watch', function() {
-    gulp.watch('./public/**/*.html', ['html-reload']);
+    gulp.watch('./public/**/*.html', ['livereload']);
     
     gulp.watch('./app/**/*.js', ['browserify']);
     gulp.watch('./app/**/*.hbs', ['browserify']);
-    gulp.watch('./public/**/*.js', ['js-reload']);
+    gulp.watch('./public/**/*.js', ['livereload']);
 
-    gulp.watch('./styles/**/*.scss', ['sass']);
-    gulp.watch('./public/css/**/*.css', ['css-reload']);
+    gulp.watch('./app/**/*.scss', ['sass']);
+    gulp.watch('./public/css/**/*.css', ['livereload']);
 });
 
 //Serve (for development)
@@ -44,9 +44,9 @@ gulp.task('serve', function () {
 //Browserify
 gulp.task('browserify',function(){
   return browserify({
-    entries:'./app/index.js',
+    entries:'./app/app-main.js',
     debug:true,
-    transform: ['hbsfy']
+    transform: ['hbsfy','babelify']
   })
   .bundle()
   .pipe(source('./bundle.js'))
@@ -57,28 +57,15 @@ gulp.task('browserify',function(){
 
 //Sass
 gulp.task('sass', function () {
-    gulp.src('./styles/*.scss')
+    gulp.src('./app/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('public/css'));
 });
 
 
 //Task html livereload
-gulp.task('html-reload', function() {
-  gulp.src('./public/**/*.html')
+gulp.task('livereload', function() {
+  gulp.src('./public/**/*')
     .pipe(connect.reload());
 });
-
-//Task js livereload
-gulp.task('js-reload', function() {
-  gulp.src('./public/**/*.js')
-    .pipe(connect.reload());
-});
-
-//Task css livereload
-gulp.task('css-reload', function() {
-  gulp.src('./public/css/**/*.css')
-    .pipe(connect.reload());
-});
-
-

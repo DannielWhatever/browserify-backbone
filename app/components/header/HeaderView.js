@@ -1,11 +1,7 @@
-var $ = require('jquery');
-//var _ = require('underscore');
-var Backbone = require('backbone');
 
-var template = require('../templates/Header.hbs');
+import Backbone from 'backbone';
 
-Backbone.$ = $;
-
+import template from './HeaderTemplate.hbs';
 
 module.exports = Backbone.View.extend({
 	el: '#header',
@@ -13,7 +9,7 @@ module.exports = Backbone.View.extend({
 
 	initialize: function(){
 	    
-		aboutMe = {
+		this.aboutMe = {
 			name: 'Daniel Gutiérrez',
 			title: 'Software Developer',
 			social: [
@@ -33,7 +29,7 @@ module.exports = Backbone.View.extend({
 
 	render: function(){
 
-		this.$el.html( template(aboutMe) );
+		this.$el.html( template(this.aboutMe) );
 		//this.remove();				
 	}
 

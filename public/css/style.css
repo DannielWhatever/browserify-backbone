@@ -21,7 +21,22 @@ h2 {
 #gallery {
   width: 400px; }
 
-/** Post **/
-.post {
-  font-family: "Indie Flower";
-  font-size: 18px; }
+/** Tweets **/
+#tweets {
+  border: 1px solid #22b;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #229; }
+  #tweets div p {
+    color: #0e0;
+    font-family: "Indie Flower";
+    font-size: 20px; }
+  #tweets div label {
+    font-size: 16px; }
+
+/** Posts **/
+#posts div h2 {
+  color: #cfc; }
+
+#posts div p {
+  color: #cbc; }

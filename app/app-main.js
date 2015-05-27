@@ -1,44 +1,30 @@
-var Backbone = require('backbone');
-var $ = require('jquery');
+//Require libraries
 
-var Student = require('./models/Student');
-
-var StudentCollection = require('./collections/StudentCollection');
+import Backbone from 'backbone';
+import $ from 'jquery';
 
 Backbone.$ = $;
 
-module.exports = Backbone.View.extend({
-	el: '#title',
+//Require components
 
-	initialize: function(){
-	    console.log('wuuut sap')
+import AppView from './application/AppView';
+import Router from './Router';
 
-	    var a = new Student({name:'Jonhy',promedio:9});
-	    if(a.isValid()){
-		    console.log(a.toJSON());
-		    console.log(a.get('edad'));
-		    console.log(a.set('edad',90));
-		}
-
-		var students = new StudentCollection([a]);
-		students.add(new Student({name:'Daniel'}));
-
-		//students.get(1).set('edad',24);
+import HeaderView from './components/header/HeaderView';
+import MenuView from './components/menu/MenuView';
 
 
-	    this.render();
-	},
+//Main App
+$(() => {
 
-	render: function(){
-		this.$el.html('<p>wooooooooooooooo yeah</p><button id="tbtn">asdas</button>');
-		//$('body').prepend(this.$el);
-	},
+  	new AppView();
+	new HeaderView();
+	new MenuView();
+	new Router();
 
-	events: {
-		'click #tbtn': 'eventoX'
-	},
+	Backbone.history.start();	
 
-	eventoX: function(){
-		console.log('eVento');
-	}
+
+
 });
+

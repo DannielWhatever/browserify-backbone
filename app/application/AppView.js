@@ -1,13 +1,10 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
 
-var template = require('../templates/Post.hbs');
+import Backbone from 'backbone';
 
-Backbone.$ = $;
-
+import template from './AppTemplate.hbs';
 
 module.exports = Backbone.View.extend({
-	el: '#post',
+	el: '#app',
 	aboutMe: null,
 
 	initialize: function(){
@@ -18,6 +15,7 @@ module.exports = Backbone.View.extend({
 	render: function(){
 
 		this.$el.html( template({}) );
+						
 	}
 
 });

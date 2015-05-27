@@ -29,10 +29,34 @@ h2{
 	width: 400px;
 }
 
-/** Post **/
-.post{
-	font-family: $font-indie;
-	font-size: 18px;
+
+/** Tweets **/
+#tweets{
+	border: 1px solid #22b;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #229;
+
+	div p{
+		color: #0e0;
+		font-family: $font-indie;
+		font-size: 20px;
+	}
+
+	div label{
+		font-size: 16px;
+	}
 }
 
 
+/** Posts **/
+#posts{
+	
+	div h2{
+		color: #cfc;
+	}
+	
+	div p{
+		color: #cbc;
+	}
+}
