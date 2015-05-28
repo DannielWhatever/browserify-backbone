@@ -10,8 +10,8 @@ module.exports = Backbone.View.extend({
 	initialize: function(){
 	    
 		this.aboutMe = {
-			name: 'Daniel Gutiérrez',
-			title: 'Software Developer',
+			name: 'Super blog',
+			title: 'shalalala',
 			social: [
 						{
 							link:'https://github.com/DannielWhatever',

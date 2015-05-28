@@ -3,9 +3,10 @@
   "author": "Daniel Gutierrez <dannielgutierrez90@gmail.com>",
   "version": "0.0.1",
   "dependencies": {
-    "express": "~4.12.x",
     "backbone": "^1.1.2",
-    "jquery": "^2.1.4"
+    "express": "~4.12.x",
+    "jquery": "^2.1.4",
+    "materialize-css": "^0.96.1"
   },
   "engines": {
     "node": "0.12.2"

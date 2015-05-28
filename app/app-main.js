@@ -2,6 +2,7 @@
 
 import Backbone from 'backbone';
 import $ from 'jquery';
+//import materialize from 'materialize-css';
 
 Backbone.$ = $;
 
