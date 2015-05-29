@@ -5,11 +5,7 @@ import template from './MenuTemplate.hbs';
 
 module.exports = Backbone.View.extend({
 	el: '#menu',
-	navBar: null,
-
-	initialize: function(){
-	    
-		this.navBar = {
+	navBar: {
 			menu: [
 						{
 							link:'/#home',
@@ -20,13 +16,13 @@ module.exports = Backbone.View.extend({
 							title:'Social'
 						}
 					]
-		};
+	},
 
+	initialize: function(){
 	    this.render();
 	},
 
 	render: function(){
-
 		this.$el.html( template(this.navBar) );
 		//this.remove();				
 	}

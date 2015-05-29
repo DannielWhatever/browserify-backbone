@@ -14,10 +14,5 @@ import AppView from './application/AppView';
 console.log('%c Hello stranger! ', 'background: #222; color: #bada50');
 
 //Main App
-$(() => {
-
-  	let App = new AppView();
-	App.start();
-
-});
-
+let App = new AppView();
+App.start();

@@ -48,11 +48,11 @@ module.exports = Backbone.View.extend({
 
 		this.$el.html( template(content) );
 
-		$(document).ready(function(){
-		  $('.my-carousel').slick({
-  			autoplay: true,
-  			autoplaySpeed: 2500
-		  });
+		$(() => {
+			$('.my-carousel').slick({
+				autoplay: true,
+				autoplaySpeed: 2500
+			});
 		});
 						
 	}

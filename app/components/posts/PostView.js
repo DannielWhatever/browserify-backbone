@@ -5,9 +5,7 @@ import template from './PostTemplate.hbs';
 
 module.exports = Backbone.View.extend({
 
-	initialize: function(){
-	    
-	    this.render();
+	initialize: function(){    
 	},
 
 	events: {
