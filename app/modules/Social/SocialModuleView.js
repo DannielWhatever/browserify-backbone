@@ -1,41 +1,34 @@
-
+//Require libraries
 import Backbone from 'backbone';
 
+//module Template
 import template from './SocialTemplate.hbs';
 
-import Tweet from './../../components/tweets/Tweet';
-import TweetList from './../../components/tweets/TweetList';
+//Require components
+import GalleryView from './../../components/gallery/GalleryView';
 import TweetListView from './../../components/tweets/TweetListView'; 
 
 
 module.exports = Backbone.View.extend({
 	el: '#module',
-	aboutMe: null,
+	Components: {},
 
 	initialize: function(){
-	    
-	    this.render();
+	},
+
+	start: function(){
+		this.render();
 	},
 
 	render: function(){
-		
 		this.$el.html( template({}) );
+		this.loadComponents();
+	},
 
-		var tweetList = new TweetList();
-		new TweetListView({collection: tweetList});
-
-
-		//Agrego un par de tweets a la coleccion
-		var t1 = new Tweet();
-		t1.set({user: 'DannielWhatever',text: 'hola backbone :)'});
-		
-		var t2 = new Tweet();
-		t2.set({user: 'DannielWhatever',text: 'saddjk askjd :B'});
-
-		tweetList.add(t1);
-		tweetList.add(t2);
-		
-						
+	loadComponents: function(){
+		this.Components.TweetList = new TweetListView();
+		//this.Components.Gallery = new GalleryView();
 	}
+
 
 });

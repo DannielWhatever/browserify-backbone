@@ -2,16 +2,14 @@
 import Backbone from 'backbone';
 
 //Require components
-import Post from './Post';
+import Pic from './Pic';
 
 module.exports = Backbone.Collection.extend({
-	
-	model: Post,
 
-	url: 'http://localhost:3000/api/posts',
+	model: Pic,
 
   	initialize: function(){
 
-	},
+	}
 
 });

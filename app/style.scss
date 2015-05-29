@@ -19,44 +19,15 @@ h2{
 	font-family: $font-main;
 }
 
-/** Header **/
-.brand-logo{
-	margin-left: 30px;
-}
 
 /** Gallery **/
 #gallery{ 
 	width: 400px;
 }
 
-
-/** Tweets **/
-#tweets{
-	border: 1px solid #22b;
-	border-radius: 5px;
-	padding: 10px;
-	background-color: #229;
-
-	div p{
-		color: #0e0;
-		font-family: $font-indie;
-		font-size: 20px;
-	}
-
-	div label{
-		font-size: 16px;
-	}
-}
+/** Style components **/
+@import "components/header/style.scss";
+@import "components/posts/style.scss";
+@import "components/tweets/style.scss";
 
 
-/** Posts **/
-#posts{
-	
-	div h2{
-		color: #cfc;
-	}
-	
-	div p{
-		color: #cbc;
-	}
-}

@@ -13,13 +13,21 @@ body {
 h2 {
   font-family: "PT Sans Narrow"; }
 
+/** Gallery **/
+#gallery {
+  width: 400px; }
+
+/** Style components **/
 /** Header **/
 .brand-logo {
   margin-left: 30px; }
 
-/** Gallery **/
-#gallery {
-  width: 400px; }
+/** Posts **/
+#posts div h2 {
+  color: #cfc; }
+
+#posts div p {
+  color: #cbc; }
 
 /** Tweets **/
 #tweets {
@@ -33,10 +41,3 @@ h2 {
     font-size: 20px; }
   #tweets div label {
     font-size: 16px; }
-
-/** Posts **/
-#posts div h2 {
-  color: #cfc; }
-
-#posts div p {
-  color: #cbc; }

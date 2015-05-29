@@ -3,7 +3,7 @@ var gulp = require('gulp'),
  connect = require('gulp-connect'),
 
   uglify = require('gulp-uglify'),
-  concat = require('gulp-concat'),
+  //concat = require('gulp-concat'),
 
 browserify = require('browserify'),
   source = require('vinyl-source-stream'),
@@ -17,7 +17,7 @@ browserify = require('browserify'),
 gulp.task('default', ['serve','watch']);
 
 //Build
-gulp.task('build', ['browserify']);
+gulp.task('build', ['browserify','sass']);
 
 //Watch
 gulp.task('watch', function() {
@@ -57,9 +57,9 @@ gulp.task('browserify',function(){
 
 //Sass
 gulp.task('sass', function () {
-    gulp.src('./app/**/*.scss')
+    gulp.src('./app/style.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(concat('style.css'))
+        //.pipe(concat('style.css'))
         .pipe(gulp.dest('public/css'));
 });
 

@@ -1,20 +1,19 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
-var slick = require('slick-carousel');
+//Require libraries
+import Backbone from 'backbone';
+import $ from 'jquery';
+import slick from 'slick-carousel';
 
-Backbone.$ = $;
+//template
+import template from './GalleryTemplate.hbs';
 
-var template = require('../templates/Gallery.hbs');
-
-var Student = require('../models/Student');
-var Pic = require('../models/Pic');
-var PicCollection = require('../collections/PicCollection');
-var StudentCollection = require('../collections/StudentCollection');
+//Require components
+import Pic from './Pic';
+import GalleryList from './GalleryList';
 
 
 module.exports = Backbone.View.extend({
+
 	el: '#gallery',
-	myPics : null,
 
 	initialize: function(){
 	    
@@ -38,14 +37,14 @@ module.exports = Backbone.View.extend({
 	    p4.set('description','First place in startup weekend valpo with SkillSwap');
 	    p4.set('url','img/pics/swvalpo_winners.jpg');
 
-		myPics = new PicCollection([p1,p2,p3,p4]);
+		this.myPics = new GalleryList([p1,p2,p3,p4]);
 
 	    this.render();
 	},
 
 	render: function(){
 
-		var content = { myPics: myPics.toJSON() };
+		var content = { myPics: this.myPics.toJSON() };
 
 		this.$el.html( template(content) );
 
