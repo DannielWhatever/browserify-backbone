@@ -1,11 +1,11 @@
 /** Posts **/
 #posts{
 	
-	div h2{
-		color: #cfc;
+	.card-title{
+		color: $color-titles;
 	}
 	
 	div p{
-		color: #cbc;
+		color: $color-front;
 	}
 }

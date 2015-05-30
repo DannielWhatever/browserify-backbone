@@ -2,8 +2,13 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
+/** Colores **/
+$light-green-a2: #b2ff59; /* light-green accent-2 */
+
 /** Variables **/
 $color-background: #212121;
+$color-titles: $light-green-a2;
+$color-front: #cbc;
 $font-main: 'PT Sans Narrow';
 $font-indie: 'Indie Flower';
 
@@ -12,6 +17,7 @@ separator{display:block;height:40px;}
 
 body { 
 	background-color:$color-background; 
+	color: $color-front;
 }
 
 

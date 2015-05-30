@@ -1,6 +1,8 @@
 /** Fonts **/
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+/** Colores **/
+/* light-green accent-2 */
 /** Variables **/
 /** General **/
 separator {
@@ -8,7 +10,8 @@ separator {
   height: 40px; }
 
 body {
-  background-color: #212121; }
+  background-color: #212121;
+  color: #cbc; }
 
 h2 {
   font-family: "PT Sans Narrow"; }
@@ -23,8 +26,8 @@ h2 {
   margin-left: 30px; }
 
 /** Posts **/
-#posts div h2 {
-  color: #cfc; }
+#posts .card-title {
+  color: #b2ff59; }
 
 #posts div p {
   color: #cbc; }

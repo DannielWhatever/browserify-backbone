@@ -1,0 +1,20 @@
+{
+  "name": "jquery-browserify",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DannielWhatever/browserify-backbone",
+  "authors": [
+    "Danniel <dannielgutierrez90@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}

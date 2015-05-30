@@ -9,7 +9,6 @@ Backbone.$ = $;
 import AppView from './application/AppView';
 
 
-
 //Say hello
 console.log('%c Hello stranger! ', 'background: #222; color: #bada50');
 
